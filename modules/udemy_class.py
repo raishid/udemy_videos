@@ -44,7 +44,7 @@ class udemy:
             data_cap = r.json()
             titulo = capitulo['title']
             chapter = capitulo['object_index']
-            titulo = chapter+' - '+titulo
+            titulo = str(chapter)+' - '+titulo
             url = data_cap['asset']['media_sources'][0]['src']
             self.driver.find_element_by_xpath('//input[@name="titulo"]').clear()
             self.driver.find_element_by_xpath('//input[@name="url_udemy"]').clear()
