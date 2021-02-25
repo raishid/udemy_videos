@@ -1,8 +1,9 @@
 from modules import udemy_class
+from modules import alert_codigo
 import json
 print('Bot Udemy realizado por @fededav')
 udemy = udemy_class.udemy()
-url_curso = input('Introduce la url del curso: ')
+url_curso = alert_codigo.Solicitar_codigo()
 curso = udemy.Get_curso(url_curso)
 print('OBTENIENDO LOS CAPITULOS DEL CURSO')
 videos = udemy.Get_all_videos(curso)
