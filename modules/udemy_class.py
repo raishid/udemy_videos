@@ -37,7 +37,7 @@ class udemy:
         return capitulos_curso
 
     def Descargar_video(self, id_curso, capitulo):
-        if capitulo['_class'] == 'lecture':
+        if capitulo['_class'] == 'lecture' and capitulo['asset']['asset_type'] == 'Video':
             print('Obteniendo capitulo', capitulo['title'])
             id = capitulo['id']
             r = self.s.get(f'https://www.udemy.com/api-2.0/users/me/subscribed-courses/{id_curso}/lectures/{id}/?fields[lecture]=asset,description,download_url,is_free,last_watched_second&fields[asset]=asset_type,length,media_license_token,media_sources,captions,thumbnail_sprite,slides,slide_urls,download_urls&q=0.27194179700788634')
