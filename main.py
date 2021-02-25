@@ -9,5 +9,5 @@ print('OBTENIENDO LOS CAPITULOS DEL CURSO')
 videos = udemy.Get_all_videos(curso)
 count = 1
 for capitulo in videos:
-    udemy.Descargar_video(curso, str(count)+' - '+capitulo)
+    udemy.Descargar_video(curso, capitulo)
     count += 1

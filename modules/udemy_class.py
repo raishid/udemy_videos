@@ -43,6 +43,8 @@ class udemy:
             r = self.s.get(f'https://www.udemy.com/api-2.0/users/me/subscribed-courses/{id_curso}/lectures/{id}/?fields[lecture]=asset,description,download_url,is_free,last_watched_second&fields[asset]=asset_type,length,media_license_token,media_sources,captions,thumbnail_sprite,slides,slide_urls,download_urls&q=0.27194179700788634')
             data_cap = r.json()
             titulo = capitulo['title']
+            chapter = capitulo['object_index']
+            titulo = chapter+' - '+titulo
             url = data_cap['asset']['media_sources'][0]['src']
             self.driver.find_element_by_xpath('//input[@name="titulo"]').clear()
             self.driver.find_element_by_xpath('//input[@name="url_udemy"]').clear()
